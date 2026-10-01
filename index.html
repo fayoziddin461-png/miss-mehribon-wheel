@@ -1,0 +1,2354 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Special for Teacher Miss Mehribon</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, #351b70, transparent 35%),
+        radial-gradient(circle at 80% 80%, #092b65, transparent 35%),
+        linear-gradient(135deg, #050816, #101b42, #07152d);
+
+    background-size: 200% 200%;
+    animation: backgroundMove 12s ease infinite;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+#particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.aurora {
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.aurora.one {
+    background: #7c3cff;
+    top: -150px;
+    left: -100px;
+}
+
+.aurora.two {
+    background: #00d9ff;
+    right: -150px;
+    top: 25%;
+}
+
+.aurora.three {
+    background: #ff1493;
+    bottom: -200px;
+    left: 35%;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    position: relative;
+    z-index: 2;
+
+    width: min(1200px, 95%);
+    margin: auto;
+
+    padding: 25px 0 50px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    margin: 0;
+
+    font-size: clamp(25px, 5vw, 48px);
+
+    text-shadow:
+        0 0 10px #00d9ff,
+        0 0 25px #006eff;
+}
+
+.subtitle {
+    margin-top: 8px;
+
+    color: #9feaff;
+
+    letter-spacing: 2px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.main {
+    display: grid;
+
+    grid-template-columns: 1fr 360px;
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background: rgba(8, 15, 40, 0.72);
+
+    border: 1px solid rgba(0, 217, 255, 0.3);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.12),
+        inset 0 0 30px rgba(255,255,255,0.02);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* =========================
+   WHEEL
+========================= */
+
+.wheel-area {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.pointer {
+    width: 0;
+    height: 0;
+
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 38px solid #ff315d;
+
+    filter:
+        drop-shadow(0 0 10px #ff315d);
+
+    margin-bottom: -5px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.wheel-wrapper {
+    position: relative;
+
+    width: min(550px, 90vw);
+
+    aspect-ratio: 1;
+}
+
+#wheel {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border-radius: 50%;
+
+    filter:
+        drop-shadow(0 0 15px rgba(0,217,255,.7))
+        drop-shadow(0 0 35px rgba(124,60,255,.35));
+}
+
+.spin-btn {
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding: 16px 45px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: white;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00bfff,
+            #7040ff
+        );
+
+    box-shadow:
+        0 0 15px rgba(0,191,255,.6),
+        0 0 35px rgba(112,64,255,.3);
+
+    transition: .2s;
+}
+
+.spin-btn:hover {
+    transform: scale(1.05);
+}
+
+.spin-btn:disabled {
+    opacity: .5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   LISTS
+========================= */
+
+.side-title {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+
+    color: #8eeaff;
+
+    font-weight: bold;
+}
+
+.students {
+    max-height: 230px;
+
+    overflow-y: auto;
+
+    padding-right: 4px;
+}
+
+.student-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px;
+
+    margin-bottom: 7px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    transition: .2s;
+}
+
+.student-row:hover {
+    background:
+        rgba(255,255,255,.09);
+
+    transform: translateX(3px);
+}
+
+.student-name {
+    flex: 1;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.delete-btn {
+    width: 28px;
+    height: 28px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #e9294f;
+
+    color: white;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    line-height: 28px;
+
+    transition: .2s;
+}
+
+.delete-btn:hover {
+    background: #ff1744;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   ADD STUDENT
+========================= */
+
+.add-box {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.add-box input {
+    min-width: 0;
+
+    flex: 1;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    border: 1px solid #2e8cff;
+
+    outline: none;
+
+    background:
+        rgba(0,0,0,.3);
+
+    color: white;
+
+    font-size: 14px;
+}
+
+.add-box input::placeholder {
+    color: #8c9ab8;
+}
+
+.add-box button {
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 0 15px;
+
+    background: #00bfff;
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.add-box button:hover {
+    transform: scale(1.05);
+
+    background: #19caff;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.stat {
+    padding: 15px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,.05);
+}
+
+.stat-number {
+    display: block;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #62eaff;
+}
+
+.stat-label {
+    font-size: 12px;
+
+    color: #aaa;
+}
+
+
+/* =========================
+   POPUPS
+========================= */
+
+.overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,.7);
+
+    backdrop-filter: blur(8px);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 100;
+
+    padding: 20px;
+}
+
+.overlay.show {
+    display: flex;
+}
+
+.popup {
+    width: min(450px, 95%);
+
+    background: #0b1430;
+
+    border: 1px solid #22d3ee;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 40px rgba(0,217,255,.35);
+}
+
+.popup h2 {
+    margin-top: 0;
+
+    color: #70eaff;
+}
+
+.winner {
+    font-size: 32px;
+
+    font-weight: bold;
+
+    margin: 20px 0;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 15px #00d9ff;
+}
+
+.popup-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+.popup-buttons button {
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.learned-btn {
+    background: #16a34a;
+}
+
+.notlearned-btn {
+    background: #dc2626;
+}
+
+.keep-btn {
+    background: #2563eb;
+}
+
+.confirm-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.confirm-buttons button {
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.yes-btn {
+    background: #e9294f;
+}
+
+.no-btn {
+    background: #334155;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+#confetti {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 90;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .main {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .students {
+        max-height: 200px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="aurora one"></div>
+<div class="aurora two"></div>
+<div class="aurora three"></div>
+
+<canvas id="confetti"></canvas>
+
+
+<div class="container">
+
+<header>
+
+    <h1>
+        🎡 SPECIAL FOR TEACHER MISS MEHRIBON
+    </h1>
+
+    <div class="subtitle">
+        VOCABULARY RANDOM WHEEL · V3 ✨
+    </div>
+
+</header>
+
+
+<div class="main">
+
+
+<!-- =========================
+     WHEEL
+========================= -->
+
+<section class="card wheel-area">
+
+    <div class="pointer"></div>
+
+    <div class="wheel-wrapper">
+
+        <canvas
+            id="wheel"
+            width="600"
+            height="600">
+        </canvas>
+
+    </div>
+
+    <button
+        class="spin-btn"
+        id="spinBtn"
+        onclick="spinWheel()">
+
+        🎲 SPIN
+
+    </button>
+
+</section>
+
+
+
+<!-- =========================
+     STUDENTS
+========================= -->
+
+<section class="card">
+
+    <div class="side-title">
+        👥 BARABANDA
+    </div>
+
+    <div
+        id="studentsList"
+        class="students">
+    </div>
+
+
+    <div class="add-box">
+
+        <input
+            id="studentInput"
+            type="text"
+            placeholder="Student name..."
+            onkeydown="
+                if(event.key === 'Enter')
+                addStudent()
+            "
+        >
+
+        <button onclick="addStudent()">
+            ＋
+        </button>
+
+    </div>
+
+
+    <div
+        class="side-title"
+        style="margin-top:25px;">
+
+        🧠 YODLAGANLAR
+
+    </div>
+
+    <div
+        id="learnedList"
+        class="students">
+    </div>
+
+
+    <div
+        class="side-title"
+        style="margin-top:25px;">
+
+        📚 YODLAMAGANLAR
+
+    </div>
+
+    <div
+        id="notLearnedList"
+        class="students">
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <span
+                class="stat-number"
+                id="studentCount">
+
+                0
+
+            </span>
+
+            <span class="stat-label">
+                BARABANDA
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span
+                class="stat-number"
+                id="learnedCount">
+
+                0
+
+            </span>
+
+            <span class="stat-label">
+                YODLAGAN
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+</div>
+
+
+
+<!-- =========================
+     WINNER
+========================= -->
+
+<div
+    class="overlay"
+    id="winnerOverlay">
+
+    <div class="popup">
+
+        <h2>
+            🎉 WINNER!
+        </h2>
+
+        <div
+            class="winner"
+            id="winnerName">
+        </div>
+
+        <p>
+            What happened with this student?
+        </p>
+
+
+        <div class="popup-buttons">
+
+            <button
+                class="learned-btn"
+                onclick="markLearned()">
+
+                ✅ YODLADI
+
+            </button>
+
+
+            <button
+                class="notlearned-btn"
+                onclick="markNotLearned()">
+
+                ❌ YODLAMADI
+
+            </button>
+
+
+            <button
+                class="keep-btn"
+                onclick="keepStudent()">
+
+                🔄 QOLDIRISH
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     DELETE
+========================= -->
+
+<div
+    class="overlay"
+    id="deleteOverlay">
+
+    <div class="popup">
+
+        <h2>
+            ⚠️ DELETE?
+        </h2>
+
+        <p>
+
+            Remove
+            <b id="deleteName"></b>
+            from the wheel?
+
+        </p>
+
+
+        <div class="confirm-buttons">
+
+            <button
+                class="yes-btn"
+                onclick="confirmDelete()">
+
+                YES, DELETE
+
+            </button>
+
+
+            <button
+                class="no-btn"
+                onclick="closeDelete()">
+
+                CANCEL
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   STUDENTS
+===================================================== */
+
+let students = [];
+
+let learned = [];
+
+let notLearned = [];
+
+let selectedStudent = null;
+
+let studentToDelete = null;
+
+let currentRotation = 0;
+
+let spinning = false;
+
+
+/* =====================================================
+   COLORS
+===================================================== */
+
+const colors = [
+    "#ff4757",
+    "#ffa502",
+    "#2ed573",
+    "#1e90ff",
+    "#a55eea",
+    "#ff6b81",
+    "#00cec9",
+    "#e84393",
+    "#6c5ce7",
+    "#0984e3",
+    "#fdcb6e",
+    "#00b894"
+];
+
+
+/* =====================================================
+   CANVAS
+===================================================== */
+
+const wheel =
+    document.getElementById("wheel");
+
+const ctx =
+    wheel.getContext("2d");
+
+const spinBtn =
+    document.getElementById("spinBtn");
+
+
+/*
+   OPTIMIZATION:
+
+   wheelBase — bu tayyor baraban rasmi.
+
+   Uni har bir animation frame'da qayta
+   chizmaymiz.
+
+   Faqat wheelBase'ni aylantiramiz.
+*/
+
+const wheelBase =
+    document.createElement("canvas");
+
+wheelBase.width = wheel.width;
+wheelBase.height = wheel.height;
+
+const baseCtx =
+    wheelBase.getContext("2d");
+
+
+/* =====================================================
+   DRAW BASE WHEEL
+===================================================== */
+
+function drawBaseWheel() {
+
+    const center =
+        wheelBase.width / 2;
+
+    const radius =
+        wheelBase.width / 2 - 8;
+
+
+    baseCtx.clearRect(
+        0,
+        0,
+        wheelBase.width,
+        wheelBase.height
+    );
+
+
+    /* EMPTY WHEEL */
+
+    if (students.length === 0) {
+
+        baseCtx.save();
+
+        baseCtx.translate(
+            center,
+            center
+        );
+
+        baseCtx.beginPath();
+
+        baseCtx.arc(
+            0,
+            0,
+            radius,
+            0,
+            Math.PI * 2
+        );
+
+        baseCtx.fillStyle =
+            "#172554";
+
+        baseCtx.fill();
+
+        baseCtx.strokeStyle =
+            "#22d3ee";
+
+        baseCtx.lineWidth = 5;
+
+        baseCtx.stroke();
+
+
+        baseCtx.font =
+            "bold 28px Arial";
+
+        baseCtx.fillStyle =
+            "white";
+
+        baseCtx.textAlign =
+            "center";
+
+        baseCtx.textBaseline =
+            "middle";
+
+        baseCtx.fillText(
+            "ADD STUDENTS",
+            0,
+            -15
+        );
+
+
+        baseCtx.font =
+            "22px Arial";
+
+        baseCtx.fillStyle =
+            "#8eeaff";
+
+        baseCtx.fillText(
+            "＋",
+            0,
+            30
+        );
+
+
+        baseCtx.restore();
+
+        return;
+    }
+
+
+    baseCtx.save();
+
+    baseCtx.translate(
+        center,
+        center
+    );
+
+
+    const slice =
+        (Math.PI * 2) /
+        students.length;
+
+
+    for (
+        let i = 0;
+        i < students.length;
+        i++
+    ) {
+
+        const start =
+            i * slice;
+
+        const end =
+            start + slice;
+
+
+        baseCtx.beginPath();
+
+        baseCtx.moveTo(
+            0,
+            0
+        );
+
+        baseCtx.arc(
+            0,
+            0,
+            radius,
+            start,
+            end
+        );
+
+        baseCtx.closePath();
+
+
+        baseCtx.fillStyle =
+            colors[
+                i % colors.length
+            ];
+
+        baseCtx.fill();
+
+
+        baseCtx.strokeStyle =
+            "rgba(255,255,255,.5)";
+
+        baseCtx.lineWidth = 2;
+
+        baseCtx.stroke();
+
+
+        baseCtx.save();
+
+        baseCtx.rotate(
+            start + slice / 2
+        );
+
+
+        baseCtx.textAlign =
+            "right";
+
+        baseCtx.textBaseline =
+            "middle";
+
+
+        /*
+           Katta odam sonida
+           fontni avtomatik kichraytiramiz.
+        */
+
+        let fontSize = 22;
+
+
+        if (
+            students[i].length > 12
+        ) {
+            fontSize = 17;
+        }
+
+
+        if (
+            students.length > 15
+        ) {
+            fontSize = 14;
+        }
+
+
+        if (
+            students.length > 30
+        ) {
+            fontSize = 11;
+        }
+
+
+        if (
+            students.length > 50
+        ) {
+            fontSize = 9;
+        }
+
+
+        baseCtx.font =
+            `bold ${fontSize}px Arial`;
+
+        baseCtx.fillStyle =
+            "white";
+
+
+        baseCtx.shadowColor =
+            "rgba(0,0,0,.7)";
+
+        baseCtx.shadowBlur = 5;
+
+
+        baseCtx.fillText(
+            students[i],
+            radius - 25,
+            0
+        );
+
+
+        baseCtx.restore();
+
+    }
+
+
+    /* CENTER */
+
+    baseCtx.beginPath();
+
+    baseCtx.arc(
+        0,
+        0,
+        55,
+        0,
+        Math.PI * 2
+    );
+
+    baseCtx.fillStyle =
+        "#07152d";
+
+    baseCtx.fill();
+
+
+    baseCtx.strokeStyle =
+        "#7cecff";
+
+    baseCtx.lineWidth = 4;
+
+    baseCtx.stroke();
+
+
+    baseCtx.font =
+        "bold 25px Arial";
+
+    baseCtx.fillStyle =
+        "white";
+
+    baseCtx.textAlign =
+        "center";
+
+    baseCtx.textBaseline =
+        "middle";
+
+    baseCtx.fillText(
+        "🎡",
+        0,
+        0
+    );
+
+
+    baseCtx.restore();
+}
+
+
+/* =====================================================
+   DRAW ROTATED WHEEL
+===================================================== */
+
+function drawWheel(rotation = 0) {
+
+    const center =
+        wheel.width / 2;
+
+
+    ctx.clearRect(
+        0,
+        0,
+        wheel.width,
+        wheel.height
+    );
+
+
+    ctx.save();
+
+    ctx.translate(
+        center,
+        center
+    );
+
+    ctx.rotate(
+        rotation
+    );
+
+
+    /*
+       ENGIZ MUHIM QISM:
+
+       Bu yerda 600x600 barabanni
+       qayta chizmaymiz.
+
+       Faqat tayyor rasmni chiqaramiz.
+    */
+
+    ctx.drawImage(
+        wheelBase,
+        -center,
+        -center
+    );
+
+
+    ctx.restore();
+}
+
+
+/* =====================================================
+   SPIN ANIMATION
+===================================================== */
+
+function spinWheel() {
+
+    if (spinning) {
+        return;
+    }
+
+
+    if (students.length === 0) {
+
+        alert(
+            "Avval student qo'shing! 👤"
+        );
+
+        return;
+    }
+
+
+    spinning = true;
+
+    spinBtn.disabled = true;
+
+
+    /* RANDOM STUDENT */
+
+    const randomIndex =
+        Math.floor(
+            Math.random() *
+            students.length
+        );
+
+
+    selectedStudent =
+        students[randomIndex];
+
+
+    /*
+       Har bir bo'lakning markazi.
+    */
+
+    const sliceDeg =
+        360 / students.length;
+
+
+    const selectedCenter =
+        randomIndex *
+        sliceDeg +
+        sliceDeg / 2;
+
+
+    /*
+       Pointer yuqorida.
+    */
+
+    const pointerDeg = -90;
+
+
+    /*
+       Hozirgi rotation.
+    */
+
+    const currentDeg =
+        (
+            currentRotation *
+            180 /
+            Math.PI
+        ) % 360;
+
+
+    const normalizedCurrent =
+        (
+            currentDeg +
+            360
+        ) % 360;
+
+
+    /*
+       Kerakli final holat.
+    */
+
+    const finalAngle =
+        (
+            pointerDeg -
+            selectedCenter +
+            360
+        ) % 360;
+
+
+    /*
+       Hozirgi holatdan
+       kerakli holatgacha farq.
+    */
+
+    let difference =
+        finalAngle -
+        normalizedCurrent;
+
+
+    if (difference < 0) {
+        difference += 360;
+    }
+
+
+    /*
+       6 ta to'liq aylanish.
+    */
+
+    const fullSpins =
+        6 * 360;
+
+
+    /*
+       MUHIM FIX:
+
+       Endi target currentRotation'dan
+       to'g'ridan-to'g'ri hisoblanadi.
+
+       Shuning uchun 2-, 3-, 4-spinlarda
+       orqaga sakrash bo'lmaydi.
+    */
+
+    const targetRotation =
+        currentRotation +
+        (
+            fullSpins +
+            difference
+        ) *
+        Math.PI /
+        180;
+
+
+    const startRotation =
+        currentRotation;
+
+
+    /*
+       5 sekund.
+    */
+
+    const duration = 5000;
+
+    const startTime =
+        performance.now();
+
+
+    function animate(currentTime) {
+
+        const elapsed =
+            currentTime -
+            startTime;
+
+
+        let progress =
+            elapsed /
+            duration;
+
+
+        if (progress > 1) {
+            progress = 1;
+        }
+
+
+        /*
+           Smooth ease-out.
+
+           Tez boshlaydi,
+           oxirida chiroyli sekinlashadi.
+        */
+
+        const ease =
+            1 -
+            Math.pow(
+                1 - progress,
+                5
+            );
+
+
+        currentRotation =
+            startRotation +
+            (
+                targetRotation -
+                startRotation
+            ) *
+            ease;
+
+
+        /*
+           ENGIL DRAW:
+
+           Faqat tayyor rasm
+           aylantiriladi.
+        */
+
+        drawWheel(
+            currentRotation
+        );
+
+
+        if (progress < 1) {
+
+            requestAnimationFrame(
+                animate
+            );
+
+        } else {
+
+            currentRotation =
+                targetRotation;
+
+
+            drawWheel(
+                currentRotation
+            );
+
+
+            spinning = false;
+
+            spinBtn.disabled = false;
+
+
+            setTimeout(
+                showWinner,
+                350
+            );
+        }
+    }
+
+
+    requestAnimationFrame(
+        animate
+    );
+}
+
+
+/* =====================================================
+   WINNER
+===================================================== */
+
+function showWinner() {
+
+    document
+        .getElementById(
+            "winnerName"
+        )
+        .textContent =
+        selectedStudent;
+
+
+    document
+        .getElementById(
+            "winnerOverlay"
+        )
+        .classList.add(
+            "show"
+        );
+
+
+    createConfetti();
+}
+
+
+/* =====================================================
+   LEARNED
+===================================================== */
+
+function markLearned() {
+
+    if (!selectedStudent) {
+        return;
+    }
+
+
+    students =
+        students.filter(
+            name =>
+                name !==
+                selectedStudent
+        );
+
+
+    if (
+        !learned.includes(
+            selectedStudent
+        )
+    ) {
+
+        learned.push(
+            selectedStudent
+        );
+    }
+
+
+    closeWinner();
+
+    updateLists();
+
+    drawWheel(
+        currentRotation
+    );
+}
+
+
+/* =====================================================
+   NOT LEARNED
+===================================================== */
+
+function markNotLearned() {
+
+    if (!selectedStudent) {
+        return;
+    }
+
+
+    students =
+        students.filter(
+            name =>
+                name !==
+                selectedStudent
+        );
+
+
+    if (
+        !notLearned.includes(
+            selectedStudent
+        )
+    ) {
+
+        notLearned.push(
+            selectedStudent
+        );
+    }
+
+
+    closeWinner();
+
+    updateLists();
+
+    drawWheel(
+        currentRotation
+    );
+}
+
+
+/* =====================================================
+   KEEP
+===================================================== */
+
+function keepStudent() {
+
+    closeWinner();
+}
+
+
+/* =====================================================
+   CLOSE WINNER
+===================================================== */
+
+function closeWinner() {
+
+    document
+        .getElementById(
+            "winnerOverlay"
+        )
+        .classList.remove(
+            "show"
+        );
+
+
+    selectedStudent = null;
+}
+
+
+/* =====================================================
+   ADD STUDENT
+===================================================== */
+
+function addStudent() {
+
+    const input =
+        document.getElementById(
+            "studentInput"
+        );
+
+
+    const name =
+        input.value.trim();
+
+
+    if (!name) {
+        return;
+    }
+
+
+    const exists =
+        [
+            ...students,
+            ...learned,
+            ...notLearned
+        ].some(
+            x =>
+                x.toLowerCase() ===
+                name.toLowerCase()
+        );
+
+
+    if (exists) {
+
+        alert(
+            "Bu student allaqachon mavjud! ⚠️"
+        );
+
+        return;
+    }
+
+
+    students.push(name);
+
+    input.value = "";
+
+
+    updateLists();
+
+
+    /*
+       Student qo'shilganda
+       yangi tayyor baraban yaratamiz.
+    */
+
+    drawBaseWheel();
+
+
+    drawWheel(
+        currentRotation
+    );
+}
+
+
+/* =====================================================
+   UPDATE LISTS
+===================================================== */
+
+function updateLists() {
+
+    const list =
+        document.getElementById(
+            "studentsList"
+        );
+
+
+    const learnedList =
+        document.getElementById(
+            "learnedList"
+        );
+
+
+    const notLearnedList =
+        document.getElementById(
+            "notLearnedList"
+        );
+
+
+    list.innerHTML = "";
+
+    learnedList.innerHTML = "";
+
+    notLearnedList.innerHTML = "";
+
+
+    /* BARABANDA */
+
+    students.forEach(
+        name => {
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+
+            row.className =
+                "student-row";
+
+
+            const deleteButton =
+                document.createElement(
+                    "button"
+                );
+
+
+            deleteButton.className =
+                "delete-btn";
+
+
+            deleteButton.textContent =
+                "×";
+
+
+            deleteButton.title =
+                "Delete student";
+
+
+            deleteButton.onclick =
+                () =>
+                    openDeleteConfirm(
+                        name
+                    );
+
+
+            const nameElement =
+                document.createElement(
+                    "span"
+                );
+
+
+            nameElement.className =
+                "student-name";
+
+
+            nameElement.textContent =
+                name;
+
+
+            row.appendChild(
+                deleteButton
+            );
+
+
+            row.appendChild(
+                nameElement
+            );
+
+
+            list.appendChild(
+                row
+            );
+        }
+    );
+
+
+    /* YODLAGANLAR */
+
+    learned.forEach(
+        name => {
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+
+            row.className =
+                "student-row";
+
+
+            const nameElement =
+                document.createElement(
+                    "span"
+                );
+
+
+            nameElement.className =
+                "student-name";
+
+
+            nameElement.textContent =
+                "✅ " + name;
+
+
+            row.appendChild(
+                nameElement
+            );
+
+
+            learnedList.appendChild(
+                row
+            );
+        }
+    );
+
+
+    /* YODLAMAGANLAR */
+
+    notLearned.forEach(
+        name => {
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+
+            row.className =
+                "student-row";
+
+
+            const nameElement =
+                document.createElement(
+                    "span"
+                );
+
+
+            nameElement.className =
+                "student-name";
+
+
+            nameElement.textContent =
+                "❌ " + name;
+
+
+            row.appendChild(
+                nameElement
+            );
+
+
+            notLearnedList.appendChild(
+                row
+            );
+        }
+    );
+
+
+    document
+        .getElementById(
+            "studentCount"
+        )
+        .textContent =
+        students.length;
+
+
+    document
+        .getElementById(
+            "learnedCount"
+        )
+        .textContent =
+        learned.length;
+}
+
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+function openDeleteConfirm(name) {
+
+    studentToDelete =
+        name;
+
+
+    document
+        .getElementById(
+            "deleteName"
+        )
+        .textContent =
+        name;
+
+
+    document
+        .getElementById(
+            "deleteOverlay"
+        )
+        .classList.add(
+            "show"
+        );
+}
+
+
+function closeDelete() {
+
+    studentToDelete =
+        null;
+
+
+    document
+        .getElementById(
+            "deleteOverlay"
+        )
+        .classList.remove(
+            "show"
+        );
+}
+
+
+function confirmDelete() {
+
+    if (!studentToDelete) {
+        return;
+    }
+
+
+    students =
+        students.filter(
+            name =>
+                name !==
+                studentToDelete
+        );
+
+
+    closeDelete();
+
+    updateLists();
+
+
+    /*
+       Student o'chirilgandan keyin
+       tayyor barabanni qayta yaratamiz.
+    */
+
+    drawBaseWheel();
+
+
+    drawWheel(
+        currentRotation
+    );
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+const confettiCanvas =
+    document.getElementById(
+        "confetti"
+    );
+
+
+const confettiCtx =
+    confettiCanvas.getContext(
+        "2d"
+    );
+
+
+let confettiPieces = [];
+
+
+function resizeConfetti() {
+
+    confettiCanvas.width =
+        window.innerWidth;
+
+    confettiCanvas.height =
+        window.innerHeight;
+}
+
+
+window.addEventListener(
+    "resize",
+    resizeConfetti
+);
+
+
+resizeConfetti();
+
+
+function createConfetti() {
+
+    confettiPieces = [];
+
+
+    for (
+        let i = 0;
+        i < 120;
+        i++
+    ) {
+
+        confettiPieces.push({
+
+            x:
+                Math.random() *
+                confettiCanvas.width,
+
+            y:
+                -20,
+
+            size:
+                Math.random() *
+                8 + 4,
+
+            speed:
+                Math.random() *
+                4 + 2,
+
+            rotation:
+                Math.random() * 6,
+
+            color:
+                colors[
+                    Math.floor(
+                        Math.random() *
+                        colors.length
+                    )
+                ]
+        });
+    }
+
+
+    animateConfetti();
+}
+
+
+function animateConfetti() {
+
+    confettiCtx.clearRect(
+        0,
+        0,
+        confettiCanvas.width,
+        confettiCanvas.height
+    );
+
+
+    confettiPieces.forEach(
+        piece => {
+
+            piece.y +=
+                piece.speed;
+
+            piece.rotation +=
+                0.05;
+
+
+            confettiCtx.save();
+
+
+            confettiCtx.translate(
+                piece.x,
+                piece.y
+            );
+
+
+            confettiCtx.rotate(
+                piece.rotation
+            );
+
+
+            confettiCtx.fillStyle =
+                piece.color;
+
+
+            confettiCtx.fillRect(
+                -piece.size / 2,
+                -piece.size / 2,
+                piece.size,
+                piece.size
+            );
+
+
+            confettiCtx.restore();
+        }
+    );
+
+
+    confettiPieces =
+        confettiPieces.filter(
+            p =>
+                p.y <
+                confettiCanvas.height + 20
+        );
+
+
+    if (
+        confettiPieces.length > 0
+    ) {
+
+        requestAnimationFrame(
+            animateConfetti
+        );
+    }
+}
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+const particleCanvas =
+    document.getElementById(
+        "particles"
+    );
+
+
+const particleCtx =
+    particleCanvas.getContext(
+        "2d"
+    );
+
+
+let particles = [];
+
+
+function resizeParticles() {
+
+    particleCanvas.width =
+        window.innerWidth;
+
+    particleCanvas.height =
+        window.innerHeight;
+
+
+    particles = [];
+
+
+    const amount =
+        Math.min(
+            100,
+            Math.floor(
+                window.innerWidth / 12
+            )
+        );
+
+
+    for (
+        let i = 0;
+        i < amount;
+        i++
+    ) {
+
+        particles.push({
+
+            x:
+                Math.random() *
+                particleCanvas.width,
+
+            y:
+                Math.random() *
+                particleCanvas.height,
+
+            r:
+                Math.random() *
+                2 + 0.5,
+
+            dx:
+                (Math.random() - 0.5) *
+                0.4,
+
+            dy:
+                (Math.random() - 0.5) *
+                0.4
+        });
+    }
+}
+
+
+window.addEventListener(
+    "resize",
+    resizeParticles
+);
+
+
+resizeParticles();
+
+
+function animateParticles() {
+
+    particleCtx.clearRect(
+        0,
+        0,
+        particleCanvas.width,
+        particleCanvas.height
+    );
+
+
+    particles.forEach(
+        p => {
+
+            p.x += p.dx;
+
+            p.y += p.dy;
+
+
+            if (p.x < 0) {
+                p.x =
+                    particleCanvas.width;
+            }
+
+
+            if (
+                p.x >
+                particleCanvas.width
+            ) {
+                p.x = 0;
+            }
+
+
+            if (p.y < 0) {
+                p.y =
+                    particleCanvas.height;
+            }
+
+
+            if (
+                p.y >
+                particleCanvas.height
+            ) {
+                p.y = 0;
+            }
+
+
+            particleCtx.beginPath();
+
+
+            particleCtx.arc(
+                p.x,
+                p.y,
+                p.r,
+                0,
+                Math.PI * 2
+            );
+
+
+            particleCtx.fillStyle =
+                "rgba(120,220,255,.7)";
+
+
+            particleCtx.fill();
+        }
+    );
+
+
+    requestAnimationFrame(
+        animateParticles
+    );
+}
+
+
+animateParticles();
+
+
+/* =====================================================
+   START
+===================================================== */
+
+updateLists();
+
+drawBaseWheel();
+
+drawWheel();
+
+</script>
+
+</body>
+</html>
