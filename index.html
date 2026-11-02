@@ -17,17 +17,67 @@ body {
     min-height: 100vh;
     font-family: Arial, sans-serif;
     color: white;
-    background:
-        radial-gradient(circle at top left, #263b83, transparent 40%),
-        radial-gradient(circle at bottom right, #51266e, transparent 40%),
-        linear-gradient(135deg, #080d24, #111b3b);
     padding: 25px 15px;
+    overflow-x: hidden;
+    position: relative;
+
+    background:
+        radial-gradient(ellipse at 15% 15%, #263b83 0%, transparent 42%),
+        radial-gradient(ellipse at 85% 80%, #51266e 0%, transparent 45%),
+        linear-gradient(135deg, #080d24, #111b3b);
+    background-size: 150% 150%;
+    animation: backgroundMove 16s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: -30%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::before {
+    background:
+        radial-gradient(ellipse at 25% 35%, #4568dc33, transparent 35%),
+        radial-gradient(ellipse at 75% 65%, #9b59b633, transparent 35%);
+    filter: blur(35px);
+    animation: aurora 18s ease-in-out infinite alternate;
+}
+
+body::after {
+    opacity: .55;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, #ffffffaa 50%, transparent),
+        radial-gradient(2px 2px at 80px 90px, #ffffff77 50%, transparent),
+        radial-gradient(1px 1px at 140px 40px, #ffffffaa 50%, transparent),
+        radial-gradient(2px 2px at 190px 130px, #ffffff66 50%, transparent);
+    background-size: 220px 180px;
+    animation: stars 45s linear infinite;
+}
+
+@keyframes aurora {
+    from { transform: translate(-3%, -2%) scale(1); }
+    to { transform: translate(3%, 2%) scale(1.1); }
+}
+
+@keyframes stars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-180px); }
 }
 
 .container {
     max-width: 1150px;
     margin: auto;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
@@ -53,7 +103,7 @@ canvas {
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 0 20px #526fff66);
+    filter: drop-shadow(0 0 25px #526fff66);
 }
 
 .pointer {
@@ -77,6 +127,7 @@ canvas {
     border-radius: 20px;
     padding: 22px;
     backdrop-filter: blur(12px);
+    box-shadow: 0 10px 35px #0003;
 }
 
 input {
@@ -88,7 +139,7 @@ input {
     background: #101a39;
     color: white;
     font-size: 16px;
-    margin-bottom: 10px;
+    margin: 12px 0 10px;
 }
 
 button {
@@ -164,6 +215,7 @@ button:hover {
     background: #ffffff12;
     border: 1px solid #ffffff20;
     min-height: 150px;
+    backdrop-filter: blur(10px);
 }
 
 .list-box h2 {
@@ -174,6 +226,7 @@ button:hover {
 .list-box p {
     padding: 6px;
     border-bottom: 1px solid #ffffff16;
+    overflow-wrap: anywhere;
 }
 
 .learned h2 { color: #54e69a; }
@@ -185,7 +238,9 @@ button:hover {
     padding: 17px;
     border-radius: 14px;
     background: #ffffff12;
+    border: 1px solid #ffffff20;
     font-size: 17px;
+    backdrop-filter: blur(10px);
 }
 
 .modal {
@@ -499,7 +554,7 @@ document.getElementById("studentInput").addEventListener("keydown", e => {
     if (e.key === "Enter") addStudent();
 });
 
-/* RANDOM SPIN */
+/* TRUE RANDOM SPIN */
 
 function spinWheel() {
     if (spinning || students.length === 0) return;
@@ -511,8 +566,9 @@ function spinWheel() {
 
     const startRotation = currentRotation;
 
-    // Bir necha to‘liq aylanish va tasodifiy yakuniy burchak
-    const fullSpins = 5 + Math.random() * 4;
+    // Tasodifiy yakuniy burchak:
+    // 0 dan 360 gradusgacha istalgan nuqta.
+    const fullSpins = 5 + Math.floor(Math.random() * 4);
     const randomAngle = Math.random() * Math.PI * 2;
 
     const targetRotation =
@@ -525,7 +581,6 @@ function spinWheel() {
         const elapsed = now - startTime;
         const progress = Math.min(elapsed / duration, 1);
 
-        // Sekinlashib to‘xtash effekti
         const ease = 1 - Math.pow(1 - progress, 4);
 
         currentRotation =
@@ -540,18 +595,22 @@ function spinWheel() {
             currentRotation = targetRotation;
             spinning = false;
 
-            // G‘olibni oldindan tanlamaymiz.
-            // Strelka ostidagi bo‘lakni hisoblaymiz.
+            // Strelka yuqorida turadi.
+            // G'olib strelka ostidagi sektor orqali topiladi.
             const slice = Math.PI * 2 / students.length;
 
-            const normalizedRotation =
-                ((-currentRotation % (Math.PI * 2)) +
-                Math.PI * 2) % (Math.PI * 2);
+            const pointerAngle = -Math.PI / 2;
+            const wheelAngle = pointerAngle - currentRotation;
+            const firstSegmentAngle = -Math.PI / 2;
 
-            const winnerIndex = Math.min(
-                Math.floor(normalizedRotation / slice),
-                students.length - 1
-            );
+            let relativeAngle =
+                (wheelAngle - firstSegmentAngle) % (Math.PI * 2);
+
+            if (relativeAngle < 0) {
+                relativeAngle += Math.PI * 2;
+            }
+
+            const winnerIndex = Math.floor(relativeAngle / slice);
 
             selectedStudent = students[winnerIndex];
 
