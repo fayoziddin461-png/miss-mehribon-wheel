@@ -1,176 +1,126 @@
+
 <!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>7-"A" VOCABULARY WHEEL OF NAMES</title>
 
 <style>
 * {
     box-sizing: border-box;
-}
-
-html, body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    min-height: 100%;
-    font-family: Arial, sans-serif;
-    color: white;
 }
 
 body {
     min-height: 100vh;
-    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
     background:
-        radial-gradient(circle at 20% 20%, #351b70, transparent 35%),
-        radial-gradient(circle at 80% 80%, #092b65, transparent 35%),
-        linear-gradient(135deg, #050816, #101b42, #07152d);
-    background-size: 200% 200%;
-    animation: backgroundMove 12s ease infinite;
-}
-
-@keyframes backgroundMove {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-}
-
-#particles {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.aurora {
-    position: fixed;
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.25;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.aurora.one {
-    background: #7c3cff;
-    top: -150px;
-    left: -100px;
-}
-
-.aurora.two {
-    background: #00d9ff;
-    right: -150px;
-    top: 25%;
-}
-
-.aurora.three {
-    background: #ff1493;
-    bottom: -200px;
-    left: 35%;
+        radial-gradient(circle at top left, #263b83, transparent 40%),
+        radial-gradient(circle at bottom right, #51266e, transparent 40%),
+        linear-gradient(135deg, #080d24, #111b3b);
+    padding: 25px 15px;
 }
 
 .container {
-    position: relative;
-    z-index: 2;
-    width: min(1200px, 95%);
+    max-width: 1150px;
     margin: auto;
-    padding: 25px 0 50px;
-}
-
-header {
     text-align: center;
-    margin-bottom: 25px;
 }
 
 h1 {
-    margin: 0;
-    font-size: clamp(25px, 5vw, 48px);
-    text-shadow: 0 0 10px #00d9ff, 0 0 25px #006eff;
-}
-
-.subtitle {
-    margin-top: 8px;
-    color: #9feaff;
-    letter-spacing: 2px;
-    font-size: 14px;
+    font-size: clamp(25px, 5vw, 42px);
+    margin: 15px 0 30px;
+    text-shadow: 0 0 20px #668cff;
 }
 
 .main {
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 25px;
-    align-items: start;
-}
-
-.card {
-    background: rgba(8, 15, 40, 0.72);
-    border: 1px solid rgba(0, 217, 255, 0.3);
-    border-radius: 25px;
-    padding: 25px;
-    box-shadow:
-        0 0 25px rgba(0, 217, 255, 0.12),
-        inset 0 0 30px rgba(255,255,255,0.02);
-    backdrop-filter: blur(15px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
 }
 
 .wheel-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
+    width: min(90vw, 500px);
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 20px #526fff66);
 }
 
 .pointer {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
     width: 0;
     height: 0;
-    border-left: 18px solid transparent;
-    border-right: 18px solid transparent;
-    border-top: 38px solid #ff315d;
-    filter: drop-shadow(0 0 10px #ff315d);
-    margin-bottom: -5px;
-    position: relative;
-    z-index: 5;
+    border-left: 19px solid transparent;
+    border-right: 19px solid transparent;
+    border-top: 38px solid #ffcf40;
+    filter: drop-shadow(0 3px 5px black);
 }
 
-.wheel-wrapper {
-    position: relative;
-    width: min(550px, 90vw);
-    aspect-ratio: 1;
+.panel {
+    width: min(100%, 400px);
+    background: #ffffff12;
+    border: 1px solid #ffffff25;
+    border-radius: 20px;
+    padding: 22px;
+    backdrop-filter: blur(12px);
 }
 
-#wheel {
+input {
     width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 50%;
-    filter:
-        drop-shadow(0 0 15px rgba(0,217,255,.7))
-        drop-shadow(0 0 35px rgba(124,60,255,.35));
+    padding: 13px;
+    border: 1px solid #ffffff35;
+    border-radius: 10px;
+    outline: none;
+    background: #101a39;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
-.spin-btn {
-    margin-top: 25px;
+button {
     border: none;
-    border-radius: 50px;
-    padding: 16px 45px;
-    font-size: 20px;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 15px;
     font-weight: bold;
-    color: white;
     cursor: pointer;
-    background: linear-gradient(135deg, #00bfff, #7040ff);
-    box-shadow:
-        0 0 15px rgba(0,191,255,.6),
-        0 0 35px rgba(112,64,255,.3);
     transition: .2s;
 }
 
-.spin-btn:hover {
-    transform: scale(1.05);
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+}
+
+.add-btn {
+    width: 100%;
+    color: white;
+    background: #4267ed;
+}
+
+.spin-btn {
+    margin-top: 20px;
+    width: min(90vw, 500px);
+    padding: 17px;
+    border-radius: 14px;
+    color: #111;
+    background: linear-gradient(90deg, #ffcf40, #ff9f43);
+    font-size: 20px;
+    box-shadow: 0 5px 20px #ffb52e44;
 }
 
 .spin-btn:disabled {
@@ -178,222 +128,483 @@ h1 {
     cursor: not-allowed;
 }
 
-.side-title {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #8eeaff;
-    font-weight: bold;
-}
-
 .students {
-    max-height: 230px;
+    margin-top: 18px;
+    max-height: 210px;
     overflow-y: auto;
-    padding-right: 4px;
+    text-align: left;
 }
 
-.student-row {
+.student {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    padding: 9px;
+    padding: 9px 11px;
     margin-bottom: 7px;
-    border-radius: 12px;
-    background: rgba(255,255,255,.05);
-    transition: .2s;
-}
-
-.student-row:hover {
-    background: rgba(255,255,255,.09);
-    transform: translateX(3px);
-}
-
-.student-name {
-    flex: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    border-radius: 8px;
+    background: #ffffff12;
 }
 
 .delete-btn {
-    width: 28px;
-    height: 28px;
-    border: none;
-    border-radius: 8px;
-    background: #e9294f;
+    padding: 5px 10px;
     color: white;
-    font-size: 19px;
-    cursor: pointer;
-    line-height: 28px;
-    transition: .2s;
+    background: #e74c5e;
 }
 
-.delete-btn:hover {
-    background: #ff1744;
-    transform: scale(1.08);
+.lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 35px;
 }
 
-.add-box {
-    display: flex;
-    gap: 8px;
-    margin-top: 15px;
+.list-box {
+    padding: 18px;
+    border-radius: 15px;
+    background: #ffffff12;
+    border: 1px solid #ffffff20;
+    min-height: 150px;
 }
 
-.add-box input {
-    min-width: 0;
-    flex: 1;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #2e8cff;
-    outline: none;
-    background: rgba(0,0,0,.3);
-    color: white;
-    font-size: 14px;
+.list-box h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
 }
 
-.add-box input::placeholder {
-    color: #8c9ab8;
+.list-box p {
+    padding: 6px;
+    border-bottom: 1px solid #ffffff16;
 }
 
-.add-box button {
-    border: none;
-    border-radius: 10px;
-    padding: 0 15px;
-    background: #00bfff;
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.add-box button:hover {
-    transform: scale(1.05);
-    background: #19caff;
-}
+.learned h2 { color: #54e69a; }
+.not-learned h2 { color: #ff7777; }
+.remaining h2 { color: #ffd45a; }
 
 .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 20px;
+    margin-top: 25px;
+    padding: 17px;
+    border-radius: 14px;
+    background: #ffffff12;
+    font-size: 17px;
 }
 
-.stat {
-    padding: 15px;
-    border-radius: 15px;
-    text-align: center;
-    background: rgba(255,255,255,.05);
-}
-
-.stat-number {
-    display: block;
-    font-size: 25px;
-    font-weight: bold;
-    color: #62eaff;
-}
-
-.stat-label {
-    font-size: 12px;
-    color: #aaa;
-}
-
-.overlay {
+.modal {
+    display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.7);
-    backdrop-filter: blur(8px);
-    display: none;
+    z-index: 10;
+    background: #000b;
     justify-content: center;
     align-items: center;
-    z-index: 100;
-    padding: 20px;
+    padding: 15px;
 }
 
-.overlay.show {
-    display: flex;
-}
-
-.popup {
-    width: min(450px, 95%);
-    background: #0b1430;
-    border: 1px solid #22d3ee;
-    border-radius: 25px;
-    padding: 30px;
+.modal-content {
+    width: min(100%, 420px);
+    background: #17234b;
+    border: 1px solid #ffffff35;
+    border-radius: 20px;
+    padding: 28px;
     text-align: center;
-    box-shadow: 0 0 40px rgba(0,217,255,.35);
+    box-shadow: 0 0 40px #536eff55;
 }
 
-.popup h2 {
-    margin-top: 0;
-    color: #70eaff;
+.modal-content h2 {
+    color: #ffcf40;
+    margin-bottom: 15px;
 }
 
-.winner {
-    font-size: 32px;
+#winnerName {
+    font-size: 30px;
     font-weight: bold;
     margin: 20px 0;
-    color: #fff;
-    text-shadow: 0 0 15px #00d9ff;
+    overflow-wrap: anywhere;
 }
 
-.popup-buttons {
-    display: flex;
+.modal-buttons {
+    display: grid;
     gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
-.popup-buttons button {
-    border: none;
-    padding: 12px 18px;
-    border-radius: 12px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
+.learn-btn { background: #27ae72; color: white; }
+.not-btn { background: #df5260; color: white; }
+.keep-btn { background: #4267ed; color: white; }
 
-.learned-btn { background: #16a34a; }
-.notlearned-btn { background: #dc2626; }
-.keep-btn { background: #2563eb; }
-
-.confirm-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.confirm-buttons button {
-    border: none;
-    padding: 12px 25px;
-    border-radius: 12px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.yes-btn { background: #e9294f; }
-.no-btn { background: #334155; }
-
-#confetti {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 90;
-}
-
-@media (max-width: 850px) {
-    .main {
-        grid-template-columns: 1fr;
-    }
-
-    .card {
-        padding: 18px;
-    }
-
-    .students {
-        max-height: 200px;
-    }
+@media(max-width: 600px) {
+    body { padding: 15px 10px; }
+    .panel { padding: 16px; }
 }
 </style>
 </head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎡 7-"A" VOCABULARY WHEEL OF NAMES</h1>
+
+    <div class="main">
+
+        <div>
+            <div class="wheel-area">
+                <div class="pointer"></div>
+                <canvas id="wheel" width="600" height="600"></canvas>
+            </div>
+
+            <button class="spin-btn" id="spinBtn" onclick="spinWheel()">
+                🎯 BARABANNI AYLANTIRISH
+            </button>
+        </div>
+
+        <div class="panel">
+            <h2 style="margin-bottom:15px">👨‍🎓 O‘quvchilar</h2>
+
+            <input id="studentInput"
+                   type="text"
+                   placeholder="O‘quvchi ismini kiriting">
+
+            <button class="add-btn" onclick="addStudent()">
+                + O‘quvchi qo‘shish
+            </button>
+
+            <div class="students" id="studentList"></div>
+        </div>
+
+    </div>
+
+    <div class="lists">
+
+        <div class="list-box remaining">
+            <h2>🎡 BARABANDA</h2>
+            <div id="remainingList"></div>
+        </div>
+
+        <div class="list-box learned">
+            <h2>✅ YODLAGANLAR</h2>
+            <div id="learnedList"></div>
+        </div>
+
+        <div class="list-box not-learned">
+            <h2>❌ YODLAMAGANLAR</h2>
+            <div id="notLearnedList"></div>
+        </div>
+
+    </div>
+
+    <div class="stats" id="stats">
+        O‘quvchilar: 0
+    </div>
+
+</div>
+
+<div class="modal" id="winnerModal">
+    <div class="modal-content">
+        <h2>🎉 TANLANGAN O‘QUVCHI!</h2>
+        <div id="winnerName"></div>
+
+        <div class="modal-buttons">
+            <button class="learn-btn" onclick="markLearned()">
+                ✅ Yodlagan
+            </button>
+
+            <button class="not-btn" onclick="markNotLearned()">
+                ❌ Yodlamagan
+            </button>
+
+            <button class="keep-btn" onclick="keepStudent()">
+                🔄 Barabanda qoldirish
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+const canvas = document.getElementById("wheel");
+const ctx = canvas.getContext("2d");
+
+const colors = [
+    "#4568dc",
+    "#9b59b6",
+    "#e67e22",
+    "#16a085",
+    "#e84393",
+    "#2980b9",
+    "#8e44ad",
+    "#27ae60",
+    "#d35400",
+    "#c0392b"
+];
+
+let students = JSON.parse(localStorage.getItem("students")) || [];
+let learned = JSON.parse(localStorage.getItem("learned")) || [];
+let notLearned = JSON.parse(localStorage.getItem("notLearned")) || [];
+
+let currentRotation = 0;
+let spinning = false;
+let selectedStudent = null;
+
+function saveData() {
+    localStorage.setItem("students", JSON.stringify(students));
+    localStorage.setItem("learned", JSON.stringify(learned));
+    localStorage.setItem("notLearned", JSON.stringify(notLearned));
+}
+
+function drawWheel() {
+    const count = students.length;
+
+    ctx.clearRect(0, 0, 600, 600);
+
+    if (count === 0) {
+        ctx.beginPath();
+        ctx.arc(300, 300, 280, 0, Math.PI * 2);
+        ctx.fillStyle = "#26345e";
+        ctx.fill();
+
+        ctx.fillStyle = "white";
+        ctx.font = "bold 25px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("O‘quvchilarni qo‘shing", 300, 310);
+        return;
+    }
+
+    const slice = Math.PI * 2 / count;
+
+    ctx.save();
+    ctx.translate(300, 300);
+    ctx.rotate(currentRotation);
+
+    for (let i = 0; i < count; i++) {
+        const start = -Math.PI / 2 + i * slice;
+        const end = start + slice;
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.arc(0, 0, 280, start, end);
+        ctx.closePath();
+
+        ctx.fillStyle = colors[i % colors.length];
+        ctx.fill();
+
+        ctx.strokeStyle = "#ffffffaa";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        ctx.save();
+        ctx.rotate(start + slice / 2);
+
+        ctx.textAlign = "right";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "white";
+        ctx.font = "bold 19px Arial";
+        ctx.shadowColor = "#000";
+        ctx.shadowBlur = 4;
+
+        let name = students[i];
+        if (name.length > 18) name = name.slice(0, 16) + "...";
+
+        ctx.fillText(name, 255, 0);
+        ctx.restore();
+    }
+
+    ctx.restore();
+
+    ctx.beginPath();
+    ctx.arc(300, 300, 35, 0, Math.PI * 2);
+    ctx.fillStyle = "#ffcf40";
+    ctx.fill();
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+}
+
+function renderLists() {
+    const studentList = document.getElementById("studentList");
+    const remainingList = document.getElementById("remainingList");
+    const learnedList = document.getElementById("learnedList");
+    const notLearnedList = document.getElementById("notLearnedList");
+
+    studentList.innerHTML = "";
+    remainingList.innerHTML = "";
+    learnedList.innerHTML = "";
+    notLearnedList.innerHTML = "";
+
+    students.forEach((name, index) => {
+        const div = document.createElement("div");
+        div.className = "student";
+
+        const span = document.createElement("span");
+        span.textContent = name;
+
+        const button = document.createElement("button");
+        button.className = "delete-btn";
+        button.textContent = "✕";
+        button.onclick = () => removeStudent(index);
+
+        div.appendChild(span);
+        div.appendChild(button);
+        studentList.appendChild(div);
+
+        addListItem(remainingList, name);
+    });
+
+    learned.forEach(name => addListItem(learnedList, name));
+    notLearned.forEach(name => addListItem(notLearnedList, name));
+
+    document.getElementById("stats").textContent =
+        "🎓 Barabanda: " + students.length +
+        " | ✅ Yodlagan: " + learned.length +
+        " | ❌ Yodlamagan: " + notLearned.length;
+
+    document.getElementById("spinBtn").disabled =
+        spinning || students.length === 0;
+
+    drawWheel();
+}
+
+function addListItem(parent, name) {
+    const p = document.createElement("p");
+    p.textContent = name;
+    parent.appendChild(p);
+}
+
+function addStudent() {
+    const input = document.getElementById("studentInput");
+    const name = input.value.trim();
+
+    if (!name) return;
+
+    if (students.includes(name) ||
+        learned.includes(name) ||
+        notLearned.includes(name)) {
+        alert("Bu o‘quvchi allaqachon ro‘yxatda bor!");
+        return;
+    }
+
+    students.push(name);
+    input.value = "";
+
+    saveData();
+    renderLists();
+}
+
+function removeStudent(index) {
+    if (spinning) return;
+
+    students.splice(index, 1);
+    saveData();
+    renderLists();
+}
+
+document.getElementById("studentInput").addEventListener("keydown", e => {
+    if (e.key === "Enter") addStudent();
+});
+
+/* RANDOM SPIN */
+
+function spinWheel() {
+    if (spinning || students.length === 0) return;
+
+    spinning = true;
+    selectedStudent = null;
+
+    document.getElementById("spinBtn").disabled = true;
+
+    const startRotation = currentRotation;
+
+    // Bir necha to‘liq aylanish va tasodifiy yakuniy burchak
+    const fullSpins = 5 + Math.random() * 4;
+    const randomAngle = Math.random() * Math.PI * 2;
+
+    const targetRotation =
+        startRotation + fullSpins * Math.PI * 2 + randomAngle;
+
+    const duration = 5500;
+    const startTime = performance.now();
+
+    function animate(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Sekinlashib to‘xtash effekti
+        const ease = 1 - Math.pow(1 - progress, 4);
+
+        currentRotation =
+            startRotation +
+            (targetRotation - startRotation) * ease;
+
+        drawWheel();
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        } else {
+            currentRotation = targetRotation;
+            spinning = false;
+
+            // G‘olibni oldindan tanlamaymiz.
+            // Strelka ostidagi bo‘lakni hisoblaymiz.
+            const slice = Math.PI * 2 / students.length;
+
+            const normalizedRotation =
+                ((-currentRotation % (Math.PI * 2)) +
+                Math.PI * 2) % (Math.PI * 2);
+
+            const winnerIndex = Math.min(
+                Math.floor(normalizedRotation / slice),
+                students.length - 1
+            );
+
+            selectedStudent = students[winnerIndex];
+
+            drawWheel();
+            showWinner();
+            renderLists();
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
+function showWinner() {
+    if (!selectedStudent) return;
+
+    document.getElementById("winnerName").textContent =
+        selectedStudent;
+
+    document.getElementById("winnerModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("winnerModal").style.display = "none";
+    selectedStudent = null;
+    renderLists();
+}
+
+function markLearned() {
+    if (!selectedStudent) return;
+
+    students = students.filter(name => name !== selectedStudent);
+    learned.push(selectedStudent);
+
+    saveData();
+    closeModal();
+}
+
+function markNotLearned() {
+    if (!selectedStudent) return;
+
+    students = students.filter(name => name !== selectedStudent);
+    notLearned.push(selectedStudent);
+
+    saveData();
+    closeModal();
+}
+
+function keepStudent() {
+    closeModal();
+}
+
+renderLists();
+</script>
+
+</body>
+</html>
