@@ -47,10 +47,7 @@ body {
     }
 }
 
-
-/* =========================
-   BACKGROUND
-========================= */
+/* BACKGROUND */
 
 #particles {
     position: fixed;
@@ -90,18 +87,13 @@ body {
     left: 35%;
 }
 
-
-/* =========================
-   MAIN
-========================= */
+/* MAIN */
 
 .container {
     position: relative;
     z-index: 2;
-
     width: min(1200px, 95%);
     margin: auto;
-
     padding: 25px 0 50px;
 }
 
@@ -112,7 +104,6 @@ header {
 
 h1 {
     margin: 0;
-
     font-size: clamp(25px, 5vw, 48px);
 
     text-shadow:
@@ -122,41 +113,26 @@ h1 {
 
 .subtitle {
     margin-top: 8px;
-
     color: #9feaff;
-
     letter-spacing: 2px;
-
     font-size: 14px;
 }
 
-
-/* =========================
-   GRID
-========================= */
+/* GRID */
 
 .main {
     display: grid;
-
     grid-template-columns: 1fr 360px;
-
     gap: 25px;
-
     align-items: start;
 }
 
-
-/* =========================
-   CARD
-========================= */
+/* CARD */
 
 .card {
     background: rgba(8, 15, 40, 0.72);
-
     border: 1px solid rgba(0, 217, 255, 0.3);
-
     border-radius: 25px;
-
     padding: 25px;
 
     box-shadow:
@@ -166,16 +142,11 @@ h1 {
     backdrop-filter: blur(15px);
 }
 
-
-/* =========================
-   WHEEL
-========================= */
+/* WHEEL */
 
 .wheel-area {
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
 }
 
@@ -187,30 +158,22 @@ h1 {
     border-right: 18px solid transparent;
     border-top: 38px solid #ff315d;
 
-    filter:
-        drop-shadow(0 0 10px #ff315d);
-
+    filter: drop-shadow(0 0 10px #ff315d);
     margin-bottom: -5px;
-
     position: relative;
-
     z-index: 5;
 }
 
 .wheel-wrapper {
     position: relative;
-
     width: min(550px, 90vw);
-
     aspect-ratio: 1;
 }
 
 #wheel {
     width: 100%;
     height: 100%;
-
     display: block;
-
     border-radius: 50%;
 
     filter:
@@ -220,27 +183,19 @@ h1 {
 
 .spin-btn {
     margin-top: 25px;
-
     border: none;
-
     border-radius: 50px;
-
     padding: 16px 45px;
-
     font-size: 20px;
-
     font-weight: bold;
-
     color: white;
-
     cursor: pointer;
 
-    background:
-        linear-gradient(
-            135deg,
-            #00bfff,
-            #7040ff
-        );
+    background: linear-gradient(
+        135deg,
+        #00bfff,
+        #7040ff
+    );
 
     box-shadow:
         0 0 15px rgba(0,191,255,.6),
@@ -255,132 +210,84 @@ h1 {
 
 .spin-btn:disabled {
     opacity: .5;
-
     cursor: not-allowed;
 }
 
-
-/* =========================
-   LISTS
-========================= */
+/* LISTS */
 
 .side-title {
     font-size: 20px;
-
     margin-bottom: 15px;
-
     color: #8eeaff;
-
     font-weight: bold;
 }
 
 .students {
     max-height: 230px;
-
     overflow-y: auto;
-
     padding-right: 4px;
 }
 
 .student-row {
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     padding: 9px;
-
     margin-bottom: 7px;
-
     border-radius: 12px;
-
-    background:
-        rgba(255,255,255,.05);
-
+    background: rgba(255,255,255,.05);
     transition: .2s;
 }
 
 .student-row:hover {
-    background:
-        rgba(255,255,255,.09);
-
+    background: rgba(255,255,255,.09);
     transform: translateX(3px);
 }
 
 .student-name {
     flex: 1;
-
     overflow: hidden;
-
     text-overflow: ellipsis;
-
     white-space: nowrap;
 }
 
-
-/* =========================
-   DELETE BUTTON
-========================= */
+/* DELETE BUTTON */
 
 .delete-btn {
     width: 28px;
     height: 28px;
-
     border: none;
-
     border-radius: 8px;
-
     background: #e9294f;
-
     color: white;
-
     font-size: 19px;
-
     cursor: pointer;
-
     line-height: 28px;
-
     transition: .2s;
 }
 
 .delete-btn:hover {
     background: #ff1744;
-
     transform: scale(1.08);
 }
 
-
-/* =========================
-   ADD STUDENT
-========================= */
+/* ADD STUDENT */
 
 .add-box {
     display: flex;
-
     gap: 8px;
-
     margin-top: 15px;
 }
 
 .add-box input {
     min-width: 0;
-
     flex: 1;
-
     padding: 12px;
-
     border-radius: 10px;
-
     border: 1px solid #2e8cff;
-
     outline: none;
-
-    background:
-        rgba(0,0,0,.3);
-
+    background: rgba(0,0,0,.3);
     color: white;
-
     font-size: 14px;
 }
 
@@ -390,95 +297,60 @@ h1 {
 
 .add-box button {
     border: none;
-
     border-radius: 10px;
-
     padding: 0 15px;
-
     background: #00bfff;
-
     color: white;
-
     font-size: 22px;
-
     font-weight: bold;
-
     cursor: pointer;
-
     transition: .2s;
 }
 
 .add-box button:hover {
     transform: scale(1.05);
-
     background: #19caff;
 }
 
-
-/* =========================
-   STATS
-========================= */
+/* STATS */
 
 .stats {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 10px;
-
     margin-top: 20px;
 }
 
 .stat {
     padding: 15px;
-
     border-radius: 15px;
-
     text-align: center;
-
-    background:
-        rgba(255,255,255,.05);
+    background: rgba(255,255,255,.05);
 }
 
 .stat-number {
     display: block;
-
     font-size: 25px;
-
     font-weight: bold;
-
     color: #62eaff;
 }
 
 .stat-label {
     font-size: 12px;
-
     color: #aaa;
 }
 
-
-/* =========================
-   POPUPS
-========================= */
+/* POPUPS */
 
 .overlay {
     position: fixed;
-
     inset: 0;
-
-    background:
-        rgba(0,0,0,.7);
-
+    background: rgba(0,0,0,.7);
     backdrop-filter: blur(8px);
-
     display: none;
-
     justify-content: center;
-
     align-items: center;
-
     z-index: 100;
-
     padding: 20px;
 }
 
@@ -488,15 +360,10 @@ h1 {
 
 .popup {
     width: min(450px, 95%);
-
     background: #0b1430;
-
     border: 1px solid #22d3ee;
-
     border-radius: 25px;
-
     padding: 30px;
-
     text-align: center;
 
     box-shadow:
@@ -505,17 +372,13 @@ h1 {
 
 .popup h2 {
     margin-top: 0;
-
     color: #70eaff;
 }
 
 .winner {
     font-size: 32px;
-
     font-weight: bold;
-
     margin: 20px 0;
-
     color: #fff;
 
     text-shadow:
@@ -524,25 +387,17 @@ h1 {
 
 .popup-buttons {
     display: flex;
-
     gap: 10px;
-
     justify-content: center;
-
     flex-wrap: wrap;
 }
 
 .popup-buttons button {
     border: none;
-
     padding: 12px 18px;
-
     border-radius: 12px;
-
     color: white;
-
     font-weight: bold;
-
     cursor: pointer;
 }
 
@@ -560,25 +415,17 @@ h1 {
 
 .confirm-buttons {
     display: flex;
-
     justify-content: center;
-
     gap: 12px;
-
     margin-top: 20px;
 }
 
 .confirm-buttons button {
     border: none;
-
     padding: 12px 25px;
-
     border-radius: 12px;
-
     color: white;
-
     font-weight: bold;
-
     cursor: pointer;
 }
 
@@ -590,28 +437,18 @@ h1 {
     background: #334155;
 }
 
-
-/* =========================
-   CONFETTI
-========================= */
+/* CONFETTI */
 
 #confetti {
     position: fixed;
-
     inset: 0;
-
     pointer-events: none;
-
     z-index: 90;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 850px) {
-
     .main {
         grid-template-columns: 1fr;
     }
@@ -627,7 +464,6 @@ h1 {
 </style>
 </head>
 
-
 <body>
 
 <canvas id="particles"></canvas>
@@ -637,7 +473,6 @@ h1 {
 <div class="aurora three"></div>
 
 <canvas id="confetti"></canvas>
-
 
 <div class="container">
 
@@ -653,13 +488,9 @@ h1 {
 
 </header>
 
-
 <div class="main">
 
-
-<!-- =========================
-     WHEEL
-========================= -->
+<!-- WHEEL -->
 
 <section class="card wheel-area">
 
@@ -686,11 +517,7 @@ h1 {
 
 </section>
 
-
-
-<!-- =========================
-     STUDENTS
-========================= -->
+<!-- STUDENTS -->
 
 <section class="card">
 
@@ -702,7 +529,6 @@ h1 {
         id="studentsList"
         class="students">
     </div>
-
 
     <div class="add-box">
 
@@ -722,7 +548,6 @@ h1 {
 
     </div>
 
-
     <div
         class="side-title"
         style="margin-top:25px;">
@@ -736,7 +561,6 @@ h1 {
         class="students">
     </div>
 
-
     <div
         class="side-title"
         style="margin-top:25px;">
@@ -749,7 +573,6 @@ h1 {
         id="notLearnedList"
         class="students">
     </div>
-
 
     <div class="stats">
 
@@ -768,7 +591,6 @@ h1 {
             </span>
 
         </div>
-
 
         <div class="stat">
 
@@ -793,11 +615,7 @@ h1 {
 </div>
 </div>
 
-
-
-<!-- =========================
-     WINNER
-========================= -->
+<!-- WINNER -->
 
 <div
     class="overlay"
@@ -818,7 +636,6 @@ h1 {
             What happened with this student?
         </p>
 
-
         <div class="popup-buttons">
 
             <button
@@ -829,7 +646,6 @@ h1 {
 
             </button>
 
-
             <button
                 class="notlearned-btn"
                 onclick="markNotLearned()">
@@ -837,7 +653,6 @@ h1 {
                 ❌ YODLAMADI
 
             </button>
-
 
             <button
                 class="keep-btn"
@@ -853,11 +668,7 @@ h1 {
 
 </div>
 
-
-
-<!-- =========================
-     DELETE
-========================= -->
+<!-- DELETE -->
 
 <div
     class="overlay"
@@ -877,7 +688,6 @@ h1 {
 
         </p>
 
-
         <div class="confirm-buttons">
 
             <button
@@ -887,7 +697,6 @@ h1 {
                 YES, DELETE
 
             </button>
-
 
             <button
                 class="no-btn"
@@ -902,8 +711,6 @@ h1 {
     </div>
 
 </div>
-
-
 
 <script>
 
@@ -924,6 +731,59 @@ let studentToDelete = null;
 let currentRotation = 0;
 
 let spinning = false;
+
+
+/* =====================================================
+   LOCAL STORAGE — DATA PERSISTENCE
+===================================================== */
+
+const STORAGE_KEY = "missMehribonVocabularyWheel_v3";
+
+function saveData() {
+    try {
+        localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify({
+                students,
+                learned,
+                notLearned
+            })
+        );
+    } catch (error) {
+        console.warn("Ma'lumotlarni saqlab bo'lmadi:", error);
+    }
+}
+
+function loadData() {
+    try {
+        const savedData = localStorage.getItem(STORAGE_KEY);
+
+        if (!savedData) return;
+
+        const data = JSON.parse(savedData);
+
+        students = Array.isArray(data.students)
+            ? data.students.filter(name => typeof name === "string")
+            : [];
+
+        learned = Array.isArray(data.learned)
+            ? data.learned.filter(name => typeof name === "string")
+            : [];
+
+        notLearned = Array.isArray(data.notLearned)
+            ? data.notLearned.filter(name => typeof name === "string")
+            : [];
+
+    } catch (error) {
+        console.warn("Saqlangan ma'lumotlarni yuklab bo'lmadi:", error);
+
+        students = [];
+        learned = [];
+        notLearned = [];
+    }
+}
+
+loadData();
 
 
 /* =====================================================
@@ -960,17 +820,6 @@ const spinBtn =
     document.getElementById("spinBtn");
 
 
-/*
-   OPTIMIZATION:
-
-   wheelBase — bu tayyor baraban rasmi.
-
-   Uni har bir animation frame'da qayta
-   chizmaymiz.
-
-   Faqat wheelBase'ni aylantiramiz.
-*/
-
 const wheelBase =
     document.createElement("canvas");
 
@@ -993,14 +842,12 @@ function drawBaseWheel() {
     const radius =
         wheelBase.width / 2 - 8;
 
-
     baseCtx.clearRect(
         0,
         0,
         wheelBase.width,
         wheelBase.height
     );
-
 
     /* EMPTY WHEEL */
 
@@ -1035,7 +882,6 @@ function drawBaseWheel() {
 
         baseCtx.stroke();
 
-
         baseCtx.font =
             "bold 28px Arial";
 
@@ -1054,7 +900,6 @@ function drawBaseWheel() {
             -15
         );
 
-
         baseCtx.font =
             "22px Arial";
 
@@ -1067,12 +912,10 @@ function drawBaseWheel() {
             30
         );
 
-
         baseCtx.restore();
 
         return;
     }
-
 
     baseCtx.save();
 
@@ -1081,11 +924,9 @@ function drawBaseWheel() {
         center
     );
 
-
     const slice =
         (Math.PI * 2) /
         students.length;
-
 
     for (
         let i = 0;
@@ -1098,7 +939,6 @@ function drawBaseWheel() {
 
         const end =
             start + slice;
-
 
         baseCtx.beginPath();
 
@@ -1117,14 +957,12 @@ function drawBaseWheel() {
 
         baseCtx.closePath();
 
-
         baseCtx.fillStyle =
             colors[
                 i % colors.length
             ];
 
         baseCtx.fill();
-
 
         baseCtx.strokeStyle =
             "rgba(255,255,255,.5)";
@@ -1133,13 +971,11 @@ function drawBaseWheel() {
 
         baseCtx.stroke();
 
-
         baseCtx.save();
 
         baseCtx.rotate(
             start + slice / 2
         );
-
 
         baseCtx.textAlign =
             "right";
@@ -1147,14 +983,7 @@ function drawBaseWheel() {
         baseCtx.textBaseline =
             "middle";
 
-
-        /*
-           Katta odam sonida
-           fontni avtomatik kichraytiramiz.
-        */
-
         let fontSize = 22;
-
 
         if (
             students[i].length > 12
@@ -1162,13 +991,11 @@ function drawBaseWheel() {
             fontSize = 17;
         }
 
-
         if (
             students.length > 15
         ) {
             fontSize = 14;
         }
-
 
         if (
             students.length > 30
@@ -1176,13 +1003,11 @@ function drawBaseWheel() {
             fontSize = 11;
         }
 
-
         if (
             students.length > 50
         ) {
             fontSize = 9;
         }
-
 
         baseCtx.font =
             `bold ${fontSize}px Arial`;
@@ -1190,12 +1015,10 @@ function drawBaseWheel() {
         baseCtx.fillStyle =
             "white";
 
-
         baseCtx.shadowColor =
             "rgba(0,0,0,.7)";
 
         baseCtx.shadowBlur = 5;
-
 
         baseCtx.fillText(
             students[i],
@@ -1203,11 +1026,8 @@ function drawBaseWheel() {
             0
         );
 
-
         baseCtx.restore();
-
     }
-
 
     /* CENTER */
 
@@ -1226,14 +1046,12 @@ function drawBaseWheel() {
 
     baseCtx.fill();
 
-
     baseCtx.strokeStyle =
         "#7cecff";
 
     baseCtx.lineWidth = 4;
 
     baseCtx.stroke();
-
 
     baseCtx.font =
         "bold 25px Arial";
@@ -1253,7 +1071,6 @@ function drawBaseWheel() {
         0
     );
 
-
     baseCtx.restore();
 }
 
@@ -1267,14 +1084,12 @@ function drawWheel(rotation = 0) {
     const center =
         wheel.width / 2;
 
-
     ctx.clearRect(
         0,
         0,
         wheel.width,
         wheel.height
     );
-
 
     ctx.save();
 
@@ -1287,22 +1102,11 @@ function drawWheel(rotation = 0) {
         rotation
     );
 
-
-    /*
-       ENGIZ MUHIM QISM:
-
-       Bu yerda 600x600 barabanni
-       qayta chizmaymiz.
-
-       Faqat tayyor rasmni chiqaramiz.
-    */
-
     ctx.drawImage(
         wheelBase,
         -center,
         -center
     );
-
 
     ctx.restore();
 }
@@ -1318,7 +1122,6 @@ function spinWheel() {
         return;
     }
 
-
     if (students.length === 0) {
 
         alert(
@@ -1328,11 +1131,9 @@ function spinWheel() {
         return;
     }
 
-
     spinning = true;
 
     spinBtn.disabled = true;
-
 
     /* RANDOM STUDENT */
 
@@ -1342,35 +1143,18 @@ function spinWheel() {
             students.length
         );
 
-
     selectedStudent =
         students[randomIndex];
 
-
-    /*
-       Har bir bo'lakning markazi.
-    */
-
     const sliceDeg =
         360 / students.length;
-
 
     const selectedCenter =
         randomIndex *
         sliceDeg +
         sliceDeg / 2;
 
-
-    /*
-       Pointer yuqorida.
-    */
-
     const pointerDeg = -90;
-
-
-    /*
-       Hozirgi rotation.
-    */
 
     const currentDeg =
         (
@@ -1379,17 +1163,11 @@ function spinWheel() {
             Math.PI
         ) % 360;
 
-
     const normalizedCurrent =
         (
             currentDeg +
             360
         ) % 360;
-
-
-    /*
-       Kerakli final holat.
-    */
 
     const finalAngle =
         (
@@ -1398,39 +1176,16 @@ function spinWheel() {
             360
         ) % 360;
 
-
-    /*
-       Hozirgi holatdan
-       kerakli holatgacha farq.
-    */
-
     let difference =
         finalAngle -
         normalizedCurrent;
-
 
     if (difference < 0) {
         difference += 360;
     }
 
-
-    /*
-       6 ta to'liq aylanish.
-    */
-
     const fullSpins =
         6 * 360;
-
-
-    /*
-       MUHIM FIX:
-
-       Endi target currentRotation'dan
-       to'g'ridan-to'g'ri hisoblanadi.
-
-       Shuning uchun 2-, 3-, 4-spinlarda
-       orqaga sakrash bo'lmaydi.
-    */
 
     const targetRotation =
         currentRotation +
@@ -1441,20 +1196,13 @@ function spinWheel() {
         Math.PI /
         180;
 
-
     const startRotation =
         currentRotation;
-
-
-    /*
-       5 sekund.
-    */
 
     const duration = 5000;
 
     const startTime =
         performance.now();
-
 
     function animate(currentTime) {
 
@@ -1462,23 +1210,13 @@ function spinWheel() {
             currentTime -
             startTime;
 
-
         let progress =
             elapsed /
             duration;
 
-
         if (progress > 1) {
             progress = 1;
         }
-
-
-        /*
-           Smooth ease-out.
-
-           Tez boshlaydi,
-           oxirida chiroyli sekinlashadi.
-        */
 
         const ease =
             1 -
@@ -1486,7 +1224,6 @@ function spinWheel() {
                 1 - progress,
                 5
             );
-
 
         currentRotation =
             startRotation +
@@ -1496,18 +1233,9 @@ function spinWheel() {
             ) *
             ease;
 
-
-        /*
-           ENGIL DRAW:
-
-           Faqat tayyor rasm
-           aylantiriladi.
-        */
-
         drawWheel(
             currentRotation
         );
-
 
         if (progress < 1) {
 
@@ -1520,16 +1248,13 @@ function spinWheel() {
             currentRotation =
                 targetRotation;
 
-
             drawWheel(
                 currentRotation
             );
 
-
             spinning = false;
 
             spinBtn.disabled = false;
-
 
             setTimeout(
                 showWinner,
@@ -1537,7 +1262,6 @@ function spinWheel() {
             );
         }
     }
-
 
     requestAnimationFrame(
         animate
@@ -1558,7 +1282,6 @@ function showWinner() {
         .textContent =
         selectedStudent;
 
-
     document
         .getElementById(
             "winnerOverlay"
@@ -1566,7 +1289,6 @@ function showWinner() {
         .classList.add(
             "show"
         );
-
 
     createConfetti();
 }
@@ -1582,14 +1304,12 @@ function markLearned() {
         return;
     }
 
-
     students =
         students.filter(
             name =>
                 name !==
                 selectedStudent
         );
-
 
     if (
         !learned.includes(
@@ -1602,10 +1322,15 @@ function markLearned() {
         );
     }
 
-
     closeWinner();
 
+    saveData();
+
     updateLists();
+
+    /* MUHIM FIX: BARABANNI QAYTA CHIZISH */
+
+    drawBaseWheel();
 
     drawWheel(
         currentRotation
@@ -1623,14 +1348,12 @@ function markNotLearned() {
         return;
     }
 
-
     students =
         students.filter(
             name =>
                 name !==
                 selectedStudent
         );
-
 
     if (
         !notLearned.includes(
@@ -1643,10 +1366,15 @@ function markNotLearned() {
         );
     }
 
-
     closeWinner();
 
+    saveData();
+
     updateLists();
+
+    /* MUHIM FIX: BARABANNI QAYTA CHIZISH */
+
+    drawBaseWheel();
 
     drawWheel(
         currentRotation
@@ -1678,7 +1406,6 @@ function closeWinner() {
             "show"
         );
 
-
     selectedStudent = null;
 }
 
@@ -1694,15 +1421,12 @@ function addStudent() {
             "studentInput"
         );
 
-
     const name =
         input.value.trim();
-
 
     if (!name) {
         return;
     }
-
 
     const exists =
         [
@@ -1715,7 +1439,6 @@ function addStudent() {
                 name.toLowerCase()
         );
 
-
     if (exists) {
 
         alert(
@@ -1725,22 +1448,15 @@ function addStudent() {
         return;
     }
 
-
     students.push(name);
 
     input.value = "";
 
+    saveData();
 
     updateLists();
 
-
-    /*
-       Student qo'shilganda
-       yangi tayyor baraban yaratamiz.
-    */
-
     drawBaseWheel();
-
 
     drawWheel(
         currentRotation
@@ -1759,25 +1475,21 @@ function updateLists() {
             "studentsList"
         );
 
-
     const learnedList =
         document.getElementById(
             "learnedList"
         );
-
 
     const notLearnedList =
         document.getElementById(
             "notLearnedList"
         );
 
-
     list.innerHTML = "";
 
     learnedList.innerHTML = "";
 
     notLearnedList.innerHTML = "";
-
 
     /* BARABANDA */
 
@@ -1789,28 +1501,22 @@ function updateLists() {
                     "div"
                 );
 
-
             row.className =
                 "student-row";
-
 
             const deleteButton =
                 document.createElement(
                     "button"
                 );
 
-
             deleteButton.className =
                 "delete-btn";
-
 
             deleteButton.textContent =
                 "×";
 
-
             deleteButton.title =
                 "Delete student";
-
 
             deleteButton.onclick =
                 () =>
@@ -1818,37 +1524,30 @@ function updateLists() {
                         name
                     );
 
-
             const nameElement =
                 document.createElement(
                     "span"
                 );
 
-
             nameElement.className =
                 "student-name";
 
-
             nameElement.textContent =
                 name;
-
 
             row.appendChild(
                 deleteButton
             );
 
-
             row.appendChild(
                 nameElement
             );
-
 
             list.appendChild(
                 row
             );
         }
     );
-
 
     /* YODLAGANLAR */
 
@@ -1860,36 +1559,29 @@ function updateLists() {
                     "div"
                 );
 
-
             row.className =
                 "student-row";
-
 
             const nameElement =
                 document.createElement(
                     "span"
                 );
 
-
             nameElement.className =
                 "student-name";
-
 
             nameElement.textContent =
                 "✅ " + name;
 
-
             row.appendChild(
                 nameElement
             );
-
 
             learnedList.appendChild(
                 row
             );
         }
     );
-
 
     /* YODLAMAGANLAR */
 
@@ -1901,29 +1593,23 @@ function updateLists() {
                     "div"
                 );
 
-
             row.className =
                 "student-row";
-
 
             const nameElement =
                 document.createElement(
                     "span"
                 );
 
-
             nameElement.className =
                 "student-name";
-
 
             nameElement.textContent =
                 "❌ " + name;
 
-
             row.appendChild(
                 nameElement
             );
-
 
             notLearnedList.appendChild(
                 row
@@ -1931,14 +1617,12 @@ function updateLists() {
         }
     );
 
-
     document
         .getElementById(
             "studentCount"
         )
         .textContent =
         students.length;
-
 
     document
         .getElementById(
@@ -1958,14 +1642,12 @@ function openDeleteConfirm(name) {
     studentToDelete =
         name;
 
-
     document
         .getElementById(
             "deleteName"
         )
         .textContent =
         name;
-
 
     document
         .getElementById(
@@ -1981,7 +1663,6 @@ function closeDelete() {
 
     studentToDelete =
         null;
-
 
     document
         .getElementById(
@@ -1999,7 +1680,6 @@ function confirmDelete() {
         return;
     }
 
-
     students =
         students.filter(
             name =>
@@ -2007,19 +1687,13 @@ function confirmDelete() {
                 studentToDelete
         );
 
+    saveData();
 
     closeDelete();
 
     updateLists();
 
-
-    /*
-       Student o'chirilgandan keyin
-       tayyor barabanni qayta yaratamiz.
-    */
-
     drawBaseWheel();
-
 
     drawWheel(
         currentRotation
@@ -2036,15 +1710,12 @@ const confettiCanvas =
         "confetti"
     );
 
-
 const confettiCtx =
     confettiCanvas.getContext(
         "2d"
     );
 
-
 let confettiPieces = [];
-
 
 function resizeConfetti() {
 
@@ -2055,12 +1726,10 @@ function resizeConfetti() {
         window.innerHeight;
 }
 
-
 window.addEventListener(
     "resize",
     resizeConfetti
 );
-
 
 resizeConfetti();
 
@@ -2068,7 +1737,6 @@ resizeConfetti();
 function createConfetti() {
 
     confettiPieces = [];
-
 
     for (
         let i = 0;
@@ -2106,7 +1774,6 @@ function createConfetti() {
         });
     }
 
-
     animateConfetti();
 }
 
@@ -2120,7 +1787,6 @@ function animateConfetti() {
         confettiCanvas.height
     );
 
-
     confettiPieces.forEach(
         piece => {
 
@@ -2130,24 +1796,19 @@ function animateConfetti() {
             piece.rotation +=
                 0.05;
 
-
             confettiCtx.save();
-
 
             confettiCtx.translate(
                 piece.x,
                 piece.y
             );
 
-
             confettiCtx.rotate(
                 piece.rotation
             );
 
-
             confettiCtx.fillStyle =
                 piece.color;
-
 
             confettiCtx.fillRect(
                 -piece.size / 2,
@@ -2156,11 +1817,9 @@ function animateConfetti() {
                 piece.size
             );
 
-
             confettiCtx.restore();
         }
     );
-
 
     confettiPieces =
         confettiPieces.filter(
@@ -2168,7 +1827,6 @@ function animateConfetti() {
                 p.y <
                 confettiCanvas.height + 20
         );
-
 
     if (
         confettiPieces.length > 0
@@ -2190,15 +1848,12 @@ const particleCanvas =
         "particles"
     );
 
-
 const particleCtx =
     particleCanvas.getContext(
         "2d"
     );
 
-
 let particles = [];
-
 
 function resizeParticles() {
 
@@ -2208,9 +1863,7 @@ function resizeParticles() {
     particleCanvas.height =
         window.innerHeight;
 
-
     particles = [];
-
 
     const amount =
         Math.min(
@@ -2219,7 +1872,6 @@ function resizeParticles() {
                 window.innerWidth / 12
             )
         );
-
 
     for (
         let i = 0;
@@ -2252,12 +1904,10 @@ function resizeParticles() {
     }
 }
 
-
 window.addEventListener(
     "resize",
     resizeParticles
 );
-
 
 resizeParticles();
 
@@ -2271,7 +1921,6 @@ function animateParticles() {
         particleCanvas.height
     );
 
-
     particles.forEach(
         p => {
 
@@ -2279,12 +1928,10 @@ function animateParticles() {
 
             p.y += p.dy;
 
-
             if (p.x < 0) {
                 p.x =
                     particleCanvas.width;
             }
-
 
             if (
                 p.x >
@@ -2293,12 +1940,10 @@ function animateParticles() {
                 p.x = 0;
             }
 
-
             if (p.y < 0) {
                 p.y =
                     particleCanvas.height;
             }
-
 
             if (
                 p.y >
@@ -2307,9 +1952,7 @@ function animateParticles() {
                 p.y = 0;
             }
 
-
             particleCtx.beginPath();
-
 
             particleCtx.arc(
                 p.x,
@@ -2319,21 +1962,17 @@ function animateParticles() {
                 Math.PI * 2
             );
 
-
             particleCtx.fillStyle =
                 "rgba(120,220,255,.7)";
-
 
             particleCtx.fill();
         }
     );
 
-
     requestAnimationFrame(
         animateParticles
     );
 }
-
 
 animateParticles();
 
